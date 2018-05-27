@@ -1,0 +1,7 @@
+<ul>
+    <li *ngFor="let mixin of list; let i = index">
+      <app-mixin-list-item [(mixin)]="list[i]"></app-mixin-list-item>
+    </li>
+</ul>
+
+<app-display-css [mixin]="list"></app-display-css>
