@@ -16,9 +16,10 @@ import { DisplayCssComponent } from './display-css/display-css.component';
     TextFieldComponent,
     MixinParserComponent,
     MixinListItemComponent,
-    DisplayCssComponent
+    DisplayCssComponent,
   ],
   imports: [
+    HighlightJsModule,
     BrowserModule,
     // import HttpClientModule after BrowserModule.
     HttpClientModule,

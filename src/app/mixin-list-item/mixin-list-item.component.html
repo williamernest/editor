@@ -1,7 +1,6 @@
 <li>
   <label>
-    <input type="checkbox" [(ngModel)]="mixin.checked" />
     {{ mixin.mixinName }}
   </label>
-  <input *ngFor="let type of mixin.mixinTypes; let i = index" type="{{ type === 'radius' ? 'number' : 'text' }}" [(ngModel)]="mixin.mixinTypes[i].value" placeholder="{{ type.name }}" (change)="onChange()" />
+  <input *ngFor="let type of mixin.mixinTypes; let i = index" type="text" [(ngModel)]="mixin.mixinTypes[i].value" placeholder="{{ type.name }}" (change)="onChange()" />
 </li>

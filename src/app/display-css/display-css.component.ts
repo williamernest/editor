@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-display-css',
   templateUrl: './display-css.component.html',
-  styleUrls: ['./display-css.component.css']
+  styleUrls: ['./display-css.component.css'],
 })
 export class DisplayCssComponent implements OnInit {
 
@@ -13,19 +13,15 @@ export class DisplayCssComponent implements OnInit {
   mixin: any;
   constructor(private el: ElementRef,
     private ref: ChangeDetectorRef,
-    private service : HighlightJsService,
     private http: HttpClient) { }
 
   ngOnInit() {
   }
 
-  ngAfterViewInit() {
-    this.service.highlight(this.el.nativeElement.querySelector('.scss'));
-  }
-
   get value() {
     if(!this.mixin) return '';
-    return this.parseList(this.mixin.filter(data => data.mixinTypes.filter((item) => item.value !== "").length > 0));
+    const parsed = this.parseList(this.mixin.filter(data => data.mixinTypes.filter((item) => item.value !== "").length > 0));
+    return `${parsed}`;
   }
 
   set value(val) {
